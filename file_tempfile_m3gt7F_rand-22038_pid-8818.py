@@ -40,7 +40,7 @@ def main():
 
     lr = 0.00001 # (learning rate)
 
-    epocs = 10000
+    epocs = 100
 
     for i in range(epocs):
         # forward prop
@@ -51,10 +51,10 @@ def main():
         meanerror = np.mean(error)
         print("me:", meanerror)
 
-        # if i % 50 == 0:
-        #     plt.scatter(range(200), data)
-        #     plt.plot(range(200), output, color="red")
-        #     plt.show()
+        if i % 50 == 0:
+            plt.scatter(range(200), data)
+            plt.plot(range(200), output, color="red")
+            plt.show()
 
         k = k - lr * np.mean(- 2 * (data - output) * x)
         b = b - lr * (-2 * np.mean(data - output))
