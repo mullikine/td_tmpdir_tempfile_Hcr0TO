@@ -38,7 +38,7 @@ def main():
     # d_k = - (2 * error) * x
     # d_b = 2 * error
 
-    lr = 0.0001 # (learning rate)
+    lr = 0.00005 # (learning rate)
 
     epocs = 100
 
