@@ -18,15 +18,17 @@ def main():
     k = 2
     b = 0
 
+
     x = np.array(range(200))
-    y = k * x + b
+    # forward prop
+    output = k * x + b
 
     data = np.linspace(0, 200, num=200) + np.random.rand(1, 200) * 50
     print(data.shape)
     plt.scatter(range(200), data)
-    plt.plot(range(200), y, color="red")
+    plt.plot(range(200), output, color="red")
 
-    error = data - y
+    error = data - output
     meanerror = np.mean(error)
     # print(error.shape)
 
@@ -41,6 +43,9 @@ def main():
     epocs = 100
 
     for i in range(epocs):
+        # forward prop
+        output = k * x + b
+
         k = k - np.mean(lr * -x)
         b = b - lr * -1
         print("k:", k)
