@@ -17,15 +17,33 @@ def linear_classifier(k, b, x):
 def main():
     k = 2
     b = 0
-    y = k * np.array(range(200)) + b
+
+    x = np.array(range(200))
+    y = k * x + b
 
     data = np.linspace(0, 200, num=200) + np.random.rand(1, 200) * 50
     print(data.shape)
     plt.scatter(range(200), data)
     plt.plot(range(200), y, color="red")
 
+    error = data - y
+    meanerror = np.mean(error)
+    # print(error.shape)
 
-    plt.show()
+    # The error sucks
+    print(meanerror)
+
+    # d_k = -x (error)
+    # d_b = -1 (error)
+
+    lr = 0.001 # (learning rate)
+
+    
+    k = k - lr * -
+    b = b - lr * -1
+
+
+    # plt.show()
 
 
     #  np.random.rand(2, 200)
