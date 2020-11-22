@@ -23,7 +23,7 @@ def main():
     # forward prop
     output = k * x + b
 
-    data = np.linspace(0, 200, num=200) + np.random.rand(1, 200) * 50
+    data = (6 * x + 2) + np.random.rand(1, 200) * 50
     print(data.shape)
     plt.scatter(range(200), data)
     plt.plot(range(200), output, color="red")
@@ -40,7 +40,7 @@ def main():
 
     lr = 0.00001 # (learning rate)
 
-    epocs = 200
+    epocs = 10000
 
     for i in range(epocs):
         # forward prop
@@ -51,10 +51,10 @@ def main():
         meanerror = np.mean(error)
         print("me:", meanerror)
 
-        if i % 50 == 0:
-            plt.scatter(range(200), data)
-            plt.plot(range(200), output, color="red")
-            plt.show()
+        # if i % 50 == 0:
+        #     plt.scatter(range(200), data)
+        #     plt.plot(range(200), output, color="red")
+        #     plt.show()
 
         k = k - lr * np.mean(- 2 * (data - output) * x)
         b = b - lr * (2 * np.mean(data - output))
