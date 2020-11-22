@@ -50,8 +50,10 @@ def main():
             # forward prop
             output = k * x + b
 
+
             # after computing output, we compute its error
-            error = (data[j*50:(j+1)*50] - output) ** 2
+            e = data[0][j*50:(j+1)*50] - output
+            error = (e) ** 2
             meanerror = np.mean(error)
             print("me:", meanerror)
 
@@ -60,8 +62,8 @@ def main():
             #     plt.plot(range(200), output, color="red")
             #     plt.show()
 
-            k = k - lr * np.mean(- 2 * (data - output) * x/200)
-            b = b - lr * (-2 * np.mean(data - output))
+            k = k - lr * np.mean(- 2 * (e) * x/200)
+            b = b - lr * (-2 * np.mean(e))
 
             # k = k - np.mean(- lr * x)
             # b = b - lr * -1
