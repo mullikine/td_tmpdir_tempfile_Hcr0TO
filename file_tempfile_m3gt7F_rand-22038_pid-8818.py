@@ -51,8 +51,8 @@ def main():
         meanerror = np.mean(error)
         print("me:", meanerror)
 
-        k = k - lr * np.mean(- 2 * error * x)
-        b = b - lr * np.mean(2 * error)
+        k = k - lr * np.mean(- 2 * (data - output) * x)
+        b = b - lr * np.mean(2 * (data - output))
 
         # k = k - np.mean(- lr * x)
         # b = b - lr * -1
