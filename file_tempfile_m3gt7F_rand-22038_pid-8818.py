@@ -15,7 +15,7 @@ def linear_classifier(k, b, x):
 #     return 1.0 / (exp(-x) + 1.0)
 
 def main():
-    k = 1
+    k = 2
     b = 0
     y = k * np.array(range(200)) + b
 
