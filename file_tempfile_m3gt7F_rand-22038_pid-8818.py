@@ -57,7 +57,7 @@ def main():
         #     plt.show()
 
         k = k - lr * np.mean(- 2 * (data - output) * x)
-        b = b - lr * (2 * np.mean(data - output))
+        b = b - lr * (-2 * np.mean(data - output))
 
         # k = k - np.mean(- lr * x)
         # b = b - lr * -1
