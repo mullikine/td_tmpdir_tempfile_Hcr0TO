@@ -1,0 +1,34 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# def neuron(x):
+#     k = 0
+#     b = 0
+#     # return sigmoid(x * k + b)
+#     return x * k + b
+
+def linear_classifier(k, b, x):
+    # return sigmoid(x * k + b)
+    return x * k + b
+
+# def sigmoid(x):
+#     return 1.0 / (exp(-x) + 1.0)
+
+def main():
+    k = 1
+    b = 0
+    y = k * np.array(range(200)) + b
+
+    data = np.linspace(0, 200, num=200) + np.random.rand(1, 200) * 50
+    print(data.shape)
+    plt.scatter(range(200), data)
+    plt.plot(range(200), y, color="red")
+
+
+    plt.show()
+
+
+    #  np.random.rand(2, 200)
+
+if __name__ == '__main__':
+    main()
