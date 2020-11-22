@@ -38,8 +38,7 @@ def main():
 
     lr = 0.001 # (learning rate)
 
-    
-    k = k - lr * -
+    k = k - lr * -x
     b = b - lr * -1
 
 
