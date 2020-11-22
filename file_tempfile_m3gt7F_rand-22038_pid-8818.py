@@ -43,27 +43,31 @@ def main():
     epocs = 10000
 
     for i in range(epocs):
-        # forward prop
-        output = k * x + b
+        # 4 batches
+        for j in range(4):
+            x = np.array(range(50))
 
-        # after computing output, we compute its error
-        error = (data - output) ** 2
-        meanerror = np.mean(error)
-        print("me:", meanerror)
+            # forward prop
+            output = k * x + b
 
-        # if i % 10 == 0:
-        #     plt.scatter(range(200), data)
-        #     plt.plot(range(200), output, color="red")
-        #     plt.show()
+            # after computing output, we compute its error
+            error = (data[j*50:(j+1)*50] - output) ** 2
+            meanerror = np.mean(error)
+            print("me:", meanerror)
 
-        k = k - lr * np.mean(- 2 * (data - output) * x/200)
-        b = b - lr * (-2 * np.mean(data - output))
+            # if i % 10 == 0:
+            #     plt.scatter(range(200), data)
+            #     plt.plot(range(200), output, color="red")
+            #     plt.show()
 
-        # k = k - np.mean(- lr * x)
-        # b = b - lr * -1
+            k = k - lr * np.mean(- 2 * (data - output) * x/200)
+            b = b - lr * (-2 * np.mean(data - output))
 
-        print("k:", k)
-        print("b:", b)
+            # k = k - np.mean(- lr * x)
+            # b = b - lr * -1
+
+            print("k:", k)
+            print("b:", b)
 
 
     # plt.show()
