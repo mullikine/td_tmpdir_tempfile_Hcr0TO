@@ -40,6 +40,8 @@ def main():
 
     k = k - np.mean(lr * -x)
     b = b - lr * -1
+    print("k:", k)
+    print("b:", b)
 
 
     # plt.show()
