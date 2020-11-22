@@ -35,8 +35,8 @@ def main():
     # The error sucks
     print(meanerror)
 
-    # d_k = -x (error)
-    # d_b = -1 (error)
+    # d_k = - (2 * error) * x
+    # d_b = 2 * error
 
     lr = 0.0001 # (learning rate)
 
