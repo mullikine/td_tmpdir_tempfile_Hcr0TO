@@ -38,10 +38,12 @@ def main():
 
     lr = 0.001 # (learning rate)
 
-    k = k - np.mean(lr * -x)
-    b = b - lr * -1
-    print("k:", k)
-    print("b:", b)
+    epocs = 100
+    for i in range(epocs):
+        k = k - np.mean(lr * -x)
+        b = b - lr * -1
+        print("k:", k)
+        print("b:", b)
 
 
     # plt.show()
