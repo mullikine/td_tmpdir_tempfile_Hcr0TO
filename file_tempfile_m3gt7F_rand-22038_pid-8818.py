@@ -51,7 +51,7 @@ def main():
         meanerror = np.mean(error)
         print("me:", meanerror)
 
-        if i % 50 == 0:
+        if i % 10 == 0:
             plt.scatter(range(200), data)
             plt.plot(range(200), output, color="red")
             plt.show()
