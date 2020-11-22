@@ -46,6 +46,11 @@ def main():
         # forward prop
         output = k * x + b
 
+        # after computing output, we compute its error
+        error = data - output
+        meanerror = np.mean(error)
+        print("me:", meanerror)
+
         k = k - np.mean(lr * -x)
         b = b - lr * -1
         print("k:", k)
