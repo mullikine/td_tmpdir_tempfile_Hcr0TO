@@ -38,7 +38,7 @@ def main():
     # d_k = - (2 * error) * x
     # d_b = 2 * error
 
-    lr = 0.00001 # (learning rate)
+    lr = 0.000001 # (learning rate)
 
     epocs = 10000
 
@@ -62,7 +62,7 @@ def main():
             #     plt.plot(range(200), output, color="red")
             #     plt.show()
 
-            k = k - lr * np.mean(- 2 * (e) * x/200)
+            k = k - lr * np.mean(- 2 * (e) * x)
             b = b - lr * (-2 * np.mean(e))
 
             # k = k - np.mean(- lr * x)
