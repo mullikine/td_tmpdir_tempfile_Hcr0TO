@@ -47,7 +47,7 @@ def main():
         output = k * x + b
 
         # after computing output, we compute its error
-        error = data - output
+        error = (data - output) ** 2
         meanerror = np.mean(error)
         print("me:", meanerror)
 
